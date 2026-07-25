@@ -20,9 +20,9 @@ public class FeatureFlagAspect {
         this.evaluators = evaluators;
     }
 
-    @Around("@annotation(com.revision.featureflag.annotation.RequiresFeature) && @annotation(requiresFeature)")
-    public Object checkFeatureToggle(ProceedingJoinPoint joinPoint, RequireFeature requiresFeature) throws Throwable {
-        String featureKey = requiresFeature.value();
+    @Around("@annotation(requireFeature)")
+    public Object checkFeatureToggle(ProceedingJoinPoint joinPoint, RequireFeature requireFeature) throws Throwable {
+        String featureKey = requireFeature.value();
 
         boolean isEnabled = evaluators.stream()
                 .anyMatch(evaluator -> evaluator.isEnabled(featureKey));
