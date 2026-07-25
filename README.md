@@ -6,7 +6,7 @@ This project provides zero-downtime, annotation-driven feature gating across app
 
 ---
 
-## 📐 Architecture & Key Components
+## 📐 Architecture & Execution Flow
 
 ```
  [ Incoming Web Request ]
@@ -45,9 +45,8 @@ This project provides zero-downtime, annotation-driven feature gating across app
 * **Aspect-Oriented Programming (AOP):** Intercepts execution flows dynamically using `@Aspect` and `@Around` advice without polluting core business services.
 * **Custom Annotations:** Uses runtime retention reflection (`@Target(ElementType.METHOD)`) to bind metadata directly to target execution points.
 * **Strategy Pattern & Auto-Collection Injection:** Dynamically discovers and injects all `FeatureEvaluator` beans into `List<FeatureEvaluator>` using Spring Dependency Injection.
-* **Declarative In-Memory Caching:** Uses `@EnableCaching` and `@Cacheable` to eliminate redundant evaluations and reduce lookup latency.
+* **Declarative In-Memory Caching:** Integrated `@EnableCaching` and `@Cacheable` to optimize evaluation lookups and eliminate redundant computations.
 * **Centralized Exception Handling:** Intercepts application exceptions using `@RestControllerAdvice` and transforms them into standard HTTP status codes (`403 Forbidden`).
-* **Unit Testing:** Verified via **JUnit 5** and **Mockito** with high coverage on aspect execution and branch paths.
 
 ---
 
@@ -60,7 +59,7 @@ This project provides zero-downtime, annotation-driven feature gating across app
 ### Build & Run
 ```bash
 # Clone the repository
-git clone [https://github.com/your-username/MultiTenantFeatureFlagEngine.git](https://github.com/your-username/MultiTenantFeatureFlagEngine.git)
+git clone [https://github.com/AksharaPandey/Multitenant_Feature_Flag_Engine.git](https://github.com/AksharaPandey/Multitenant_Feature_Flag_Engine.git)
 
 # Build project
 mvn clean install
