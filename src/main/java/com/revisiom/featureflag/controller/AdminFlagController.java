@@ -7,7 +7,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin/flags")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class AdminFlagController {
     private final SimpleToggleEvaluator toggleEvaluator;
     public AdminFlagController(SimpleToggleEvaluator toggleEvaluator){
