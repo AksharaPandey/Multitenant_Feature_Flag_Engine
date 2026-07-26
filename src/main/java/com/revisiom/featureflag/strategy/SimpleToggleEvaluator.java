@@ -25,7 +25,6 @@ public class SimpleToggleEvaluator implements FeatureEvaluator {
         return featureFlags;
     }
 
-    // Clears cache when a flag status changes so AOP gets the updated value immediately
     @CacheEvict(value = "featureFlags", key = "#featureKey")
     public void toggleFlag(String featureKey, boolean isEnabled) {
         featureFlags.put(featureKey, isEnabled);
